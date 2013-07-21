@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>mobile keyboard</title>
+  <script type="text/javascript" src="keyboard/keyboard.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+        var k = new Keyboard({
+            path_to_buttons : "keyboard/buttons.json",
+        });
+
+        k
+            // click by keyboard
+            .click(function(event) {
+                // something with 'event'
+            })
+            .activate_button(function(button) {
+                // event when button is pressed
+                button.style.background = "blue";
+            })
+            .deactivate_button(function(button) {
+                // event when button is unpressed
+                button.style.background = "white";
+            });
+
+        document.body.appendChild(k.html());
+    };
+  </script>
+</head>
+<body style="background:silver;">
+</body>
+</html>
